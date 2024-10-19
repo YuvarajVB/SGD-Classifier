@@ -48,12 +48,12 @@ y= df['target']
 
 x_train, x_test,y_train,y_test = train_test_split(x,y, test_size = 0.2, random_state = 42)
 
-sgd_clf = SGDClassifier(max_iter = 1000, tol= 1e-3)#create sgd classifier with default parameter
+sgd_clf = SGDClassifier(max_iter = 1000, tol= 1e-3)
 sgd_clf.fit(x_train, y_train)#train the classifier on the training data
 
-y_pred = sgd_clf.predict(x_test)#make predictions on the testing data
+y_pred = sgd_clf.predict(x_test)
 
-accuracy = accuracy_score(y_test, y_pred)# evaluate the classifier's accuracy
+accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy:{accuracy:.3f}")
 
 cf=confusion_matrix(y_test, y_pred)
